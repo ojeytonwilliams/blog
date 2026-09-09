@@ -15,6 +15,9 @@ jobs:
       - uses: haskell-actions/setup@v2
         with:
           enable-stack: true
+          ghc-version: 9.10.3
+          stack-version: 3.11.1
+
       - name: Build
         run: stack exec site build
 
