@@ -1,3 +1,9 @@
+# Stack
 .stack-work/
+
+# Cabal
+dist-newstyle
+
+# Build artifacts
 _site
 _cache

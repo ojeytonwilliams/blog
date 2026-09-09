@@ -19,7 +19,9 @@ jobs:
           stack-version: 3.11.1
 
       - name: Build
-        run: stack exec site build
+        run: |
+         stack build
+         stack exec site build
 
       - name: Upload
         id: deployment
