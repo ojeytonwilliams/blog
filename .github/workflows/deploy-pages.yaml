@@ -13,15 +13,11 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
-      - uses: haskell-actions/setup@v2
-        with:
-          enable-stack: true
-          ghc-version: 9.10.3
-          stack-version: 3.11.1
+      # stack-action takes care of `stack build` and caching the results
+      - uses: freckle/stack-action@v5
 
       - name: Build
         run: |
-         stack build
          stack exec site build
 
       - name: Upload
