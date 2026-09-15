@@ -15,6 +15,9 @@ jobs:
       - uses: actions/checkout@v4
       # stack-action takes care of `stack build` and caching the results
       - uses: freckle/stack-action@v5
+        with:
+          # hakyll 4.16.8.0 will not build with --pedantic and that's the default (with --fast, too)
+          stack-build-arguments: --fast
 
       - name: Build
         run: |
